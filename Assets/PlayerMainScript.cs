@@ -6,6 +6,7 @@ public class PlayerMainScript : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    public bool isAttacking = false;
 
     void Start()
     {
@@ -15,6 +16,10 @@ public class PlayerMainScript : MonoBehaviour
     void Update()
     {
         Movement();
+        if (isAttacking == true)
+        {
+            Attack();
+        }
     }
     
     public void Movement()
@@ -33,4 +38,9 @@ public class PlayerMainScript : MonoBehaviour
 
         
     }
+    public void Attack()
+    {
+        anim.SetTrigger("Attack");
+    }
+
 }
