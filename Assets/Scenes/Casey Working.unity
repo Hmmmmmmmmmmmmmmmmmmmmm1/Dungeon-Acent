@@ -326,8 +326,8 @@ PolygonCollider2D:
       - {x: -0.4651842, y: -0.27390933}
       - {x: -0.3453102, y: -0.3467313}
       - {x: -0.23183155, y: -0.35060024}
-      - {x: -0.2468301, y: -0.5594239}
-      - {x: 0.24822745, y: -0.5555556}
+      - {x: -0.24896348, y: -0.5555556}
+      - {x: 0.24908099, y: -0.5555556}
       - {x: 0.2568202, y: -0.25956357}
       - {x: 0.39942026, y: -0.19654012}
       - {x: 0.39941978, y: 0.28970638}
@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 1319806816}
   - component: {fileID: 1319806815}
   - component: {fileID: 1319806814}
+  - component: {fileID: 1319806817}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -437,6 +438,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1319806817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319806813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4caea60193c4eb9bbc58f500262d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 823783230}
 --- !u!1 &1957996230
 GameObject:
   m_ObjectHideFlags: 0
