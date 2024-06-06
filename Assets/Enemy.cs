@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health, maxHealth = 3f;
+    public float enemyHealth, maxHealth = 3f;
+    public float enemyDamage;
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        enemyHealth = maxHealth;
     }
-    public void TakeDamage(float damageAmount)
+    public void Update()
     {
-       health -= damageAmount; 
-       if(health <=0 )
+       if(enemyHealth<=0 )
        {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
        }
     }
 }
