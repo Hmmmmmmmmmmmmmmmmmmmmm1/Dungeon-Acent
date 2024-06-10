@@ -611,7 +611,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sprites/Enviroment
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprites/Enviroment
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/scasadykahler3584/Documents/Dungeon-Acent
   m_LockTracker:
