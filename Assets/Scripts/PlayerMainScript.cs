@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,8 @@ public class PlayerMainScript : MonoBehaviour
     public float health; 
     public float enemyDamage;
     public UnityEvent OnHit;
+    private bool babyHeld = false;
+    public GameObject baby;
     void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -34,23 +37,41 @@ public class PlayerMainScript : MonoBehaviour
         {
             Hit();
         }
+        if(collision.gameObject.name == "Baby")
+        {
+            babyHeld = true;
+            baby.transform.parent = this.gameObject.transform;
+        }
     }
     
     public void Movement()
     {
-        if (Input.GetKey("d"))
-        {
-            anim.SetTrigger("Run");
-            rb.velocity = new Vector2(2, 0);
-            this.gameObject.transform.localScale = new Vector2(1,1);
-        } else if(Input.GetKey("a"))
-        {
-            anim.SetTrigger("Run");
-            rb.velocity = new Vector2(-2, 0);
-            this.gameObject.transform.localScale = new Vector2(-1,1);
+        if(babyHeld == false){
+            if (Input.GetKey("d"))
+            {
+                anim.SetTrigger("Run");
+                rb.velocity = new Vector2(2, 0);
+                this.gameObject.transform.localScale = new Vector2(1,1);
+            } else if(Input.GetKey("a"))
+            {
+                anim.SetTrigger("Run");
+                rb.velocity = new Vector2(-2, 0);
+                this.gameObject.transform.localScale = new Vector2(-1,1);
+            }
         }
-
-        
+        if(babyHeld == true){
+            if (Input.GetKey("d"))
+            {
+                anim.SetTrigger("Run");
+                rb.velocity = new Vector2(1, 0);
+                this.gameObject.transform.localScale = new Vector2(1,1);
+            } else if(Input.GetKey("a"))
+            {
+                anim.SetTrigger("Run");
+                rb.velocity = new Vector2(-1, 0);
+                this.gameObject.transform.localScale = new Vector2(-1,1);
+            }
+        }
     }
     public void Attack()
     {
