@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMainScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMainScript : MonoBehaviour
     public float damage;
     public float health; 
     public float enemyDamage;
+    public UnityEvent OnHit;
     void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -30,12 +32,7 @@ public class PlayerMainScript : MonoBehaviour
     {
         if(collision.gameObject.name == "enemy")
         {
-            Debug.Log("yeoowwchhh");
-            health -= enemyDamage;
-            if (health <= 0)
-            {
-                Dead();
-            }
+            Hit();
         }
     }
     
@@ -70,5 +67,14 @@ public class PlayerMainScript : MonoBehaviour
     {
         Debug.Log("you died");
         Destroy(this.gameObject);
+    }
+    public void Hit()
+    {
+        Debug.Log("yeoowwchhh");
+        health -= enemyDamage;
+        if (health <= 0)
+        {
+           Dead();
+        }
     }
 }
