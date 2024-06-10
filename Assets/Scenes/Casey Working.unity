@@ -585,6 +585,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
+  attackPoint: {fileID: 0}
+  radius: 0
+  enemies:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 0
+  health: 0
+  enemyDamage: 0
 --- !u!1 &1034477210
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +939,7 @@ MonoBehaviour:
   floorLeft: {fileID: 3488029817740627581, guid: 602dc33dbca1f4903be24593b56ee78d, type: 3}
   floorRight: {fileID: 2755054514130174520, guid: fc26c1fa6d85c49dab77af40f4b8aeae, type: 3}
   player: {fileID: 823783230}
+  enemy: {fileID: 0}
 --- !u!1 &1456794030
 GameObject:
   m_ObjectHideFlags: 0
