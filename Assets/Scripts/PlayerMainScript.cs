@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerMainScript : MonoBehaviour
 {
     private Animator anim;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public bool isAttacking = false;
     public GameObject attackPoint;
     public float radius;
@@ -18,6 +18,7 @@ public class PlayerMainScript : MonoBehaviour
     public UnityEvent OnHit;
     private bool babyHeld = false;
     public GameObject baby;
+    public float jump;
     void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -29,6 +30,10 @@ public class PlayerMainScript : MonoBehaviour
         if(Input.GetKeyDown("space"))
         {
             Attack();
+        }
+        if (Input.GetKeyDown("w"))
+        {
+            rb.AddForce(new Vector2(rb.velocity.x, jump));
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
