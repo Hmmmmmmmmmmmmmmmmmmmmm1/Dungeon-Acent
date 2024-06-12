@@ -8,6 +8,7 @@ public class FloorGeneration : MonoBehaviour
     public GameObject floorRight;
     public GameObject player;
     public GameObject enemy;
+    public GameObject baby;
     int floor;
     bool up;
     List<int> gaps = new List<int>();
@@ -30,6 +31,10 @@ public class FloorGeneration : MonoBehaviour
         {
             case true:
                 //generate new enemies above you
+                if (player.transform.localPosition.y > floor *-5)
+                {
+                    GenerateEnemies(floor+4, (((floor-1)*-5)+2));
+                }
                 break;
             case false:
                 //if player below point
@@ -61,6 +66,7 @@ public class FloorGeneration : MonoBehaviour
         GameObject babyFloor = Instantiate(floorLeft, new Vector3(-20,depth,0), Quaternion.identity);
         babyFloor.transform.localScale = new Vector3(80,2,1);
         //instantiate baby prefab
+        Instantiate(baby, new Vector3(0,depth,0), Quaternion.identity);
 
     }
 
@@ -109,8 +115,9 @@ public class FloorGeneration : MonoBehaviour
                 }
                 if (!nah)
                 {
-                    Instantiate(enemy, new Vector3(enemyLocation-20.5f, height, 0), Quaternion.identity);
+                    GameObject currEn = Instantiate(enemy, new Vector3(enemyLocation-20.5f, height, 0), Quaternion.identity);
                     spots.Add((int)(enemyLocation));
+                    currEn.GetComponent<AIChase>().player = this.player;
                 }
             }
         }

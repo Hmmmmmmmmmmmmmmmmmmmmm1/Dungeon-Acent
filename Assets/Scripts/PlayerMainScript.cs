@@ -26,14 +26,14 @@ public class PlayerMainScript : MonoBehaviour
     void Update()
     {
         Movement();
-        if(Input.GetKeyDown("q"))
+        if(Input.GetKeyDown("space"))
         {
             Attack();
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "enemy")
+        if( collision.gameObject.layer == LayerMask.NameToLayer("Enemy layer"))
         {
             Hit();
         }
