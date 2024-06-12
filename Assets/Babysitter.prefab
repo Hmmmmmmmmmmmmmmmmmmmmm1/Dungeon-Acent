@@ -209,7 +209,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1061969486528359512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +222,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee630589e10741dab6ed2730ff110f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacking: 0
+  attackPoint: {fileID: 7264809517909904244, guid: 46a507dfda3f54fa7a3d13d533b92477, type: 3}
+  radius: 0
+  enemies:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 0
+  health: 0
+  enemyDamage: 0
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  baby: {fileID: 0}
